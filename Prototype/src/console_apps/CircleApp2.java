@@ -4,9 +4,11 @@
  * The application will output the areas of the two input circles.
  * This version 2 improves version 1 by calling re-usable utility method.
  */
-package test_01;
+package console_apps;
 
 import java.util.Scanner;
+
+import model.Circle;
 
 public class CircleApp2 {
 

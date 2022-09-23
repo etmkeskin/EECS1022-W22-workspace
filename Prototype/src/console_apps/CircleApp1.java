@@ -3,7 +3,7 @@
  * We will prompt user of radius values of two circle.
  * The application will output the areas of the two input circles.
  */
-package test_01;
+package console_apps;
 
 import java.util.Scanner;
 
