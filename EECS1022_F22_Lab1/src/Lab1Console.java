@@ -13,13 +13,13 @@ public class Lab1Console {
 		System.out.println("Enter an integer:");
 		int x = scan.nextInt();
 		double inverse = Lab1.inverseSquare(x);
-		System.out.println(inverse);
+		System.out.println(x + "^-2 = " + inverse);
 		
 		//test paintMyRoom()
 		//declare integers length, width, and height;
 		int length = 0; int width = 0; int height = 0;
 		//Prompt for and read in the length of the room
-		System.out.print("Enter the length of the room: ");
+		System.out.print("\nEnter the length of the room: ");
 		length = scan.nextInt();
 		//Prompt for and read in the width of the room
 		System.out.print("Enter the width of the room: ");
@@ -29,17 +29,30 @@ public class Lab1Console {
 		height = scan.nextInt();
 		//Call the method paintMyRoom(length, width, height)
 		double paintAmount = Lab1.paintMyRoom(length, width, height);
+		int IntValue = (int)paintAmount;
 		//Print the result to the console
-		System.out.println("To pint your room, you need: " + paintAmount + " gallons");
+		System.out.println("To print your room, you need: " + IntValue + " gallons");
 
 		
 		//test timeToHawaii(hours, mins, secs)
 		//declare integers hours, mins and secs;
+		
+		int hours = 0; int mins = 0; int secs = 0;
 		//Prompt for and read in the hours in integer
+		System.out.print("\nPlease enter the number of hours:");
+		hours = scan.nextInt();
 		//Prompt for and read in the minutes in integer
+		System.out.print("Please enter the number of minutes:");
+		mins = scan.nextInt();
 		//Prompt for and read in the seconds in integer
+		System.out.print("Please enter the number of seconds:");
+		secs = scan.nextInt();
+		
 		//Call the method timeToHawaii(hours, mins, secs)
+		int total = Lab1.timeToHawaii(hours, mins, secs);
+	
 		//Print the result to the console
+		System.out.println(hours + " Hour(s) " + mins + " Minute(s) " + secs + " Second(s) is equivalent to " + total + " Second(s).");
 		
 		//test baseConvert(number, base)
 		int base;	// the new base
@@ -48,7 +61,7 @@ public class Lab1Console {
 		// in 4 digits in the new base
 
 		// read in the base 10 number and the base 
-		System.out.println ("Base Conversion Program"); 
+		System.out.println ("\nBase Conversion Program"); 
 		System.out.println() ;
 		System.out.print ("Please enter a base (2-9): "); 
 		base = scan.nextInt();
