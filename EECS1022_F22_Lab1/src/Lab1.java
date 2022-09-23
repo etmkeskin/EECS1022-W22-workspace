@@ -120,6 +120,7 @@ public class Lab1 {
 		//return the string
 		return baseBNum;
 		
+		
 	}
 
 }
