@@ -67,15 +67,19 @@ public class Lab1Console {
 		base = scan.nextInt();
 
 		// Compute the maximum base 10 number that will fit in 4 digits
+		maxNumber = 1 * 9999;
 		// in the new base and and store it in maxNumber 
 		// tell the user what range the number they
 		// want to convert must be in, using a println statement
+		System.out.println("Your base 10 number can be maximum " + maxNumber);
 
 		System.out.print ("Please enter a base 10 number to convert: "); 
 		base10Num = scan.nextInt();
 		
 		//call the method baseConvert(base, base10Num)
+		String result = Lab1.baseConvert(base, base10Num);
 		//print the result to the console
+		System.out.println(result);
 
 	}
 

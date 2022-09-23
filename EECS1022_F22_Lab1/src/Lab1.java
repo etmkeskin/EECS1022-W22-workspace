@@ -90,21 +90,36 @@ public class Lab1 {
 		// First compute place0 -- the units place. Remember this comes
 		// from the first division so it is the remainder when the
 		// base 10 number is divided by the base (HINT use %).
+		place0 = base10Num % baseB;
+		String fourthDigit = String.valueOf(place0);
 		
 		// Then compute the quotient (integer division / will do it!) -
 		// You can either store the result back in base10Num or declare a
 		// new variable for the quotient
+		base10Num = base10Num / baseB;
 	
 		// Now compute place1 -- this is the remainder when the quotient
 		// from the preceding step is divided by the base.
+		place1 = base10Num % baseB;
+		String thirdDigit = String.valueOf(place1);
 		// Then compute the new quotient
+		base10Num = base10Num / baseB;
 	
 		// Repeat the idea from above to compute place2 and the next quotient
+		place2 = base10Num % baseB;
+		String secondDigit = String.valueOf(place2);
+		base10Num = base10Num / baseB;
 	
 		// Repeat again to compute place3
+		place3 = base10Num % baseB;
+		String firstDigit = String.valueOf(place3);
+		base10Num = base10Num / baseB;
 		
 		//concatenate the resulting integers into a single string baseBNum
+		baseBNum = firstDigit + secondDigit + thirdDigit + fourthDigit;
 		//return the string
+		return baseBNum;
+		
 	}
 
 }
