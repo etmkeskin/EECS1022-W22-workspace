@@ -1,7 +1,10 @@
+package junit_test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import model.Lab1;
 
 public class Lab1Tester {
 

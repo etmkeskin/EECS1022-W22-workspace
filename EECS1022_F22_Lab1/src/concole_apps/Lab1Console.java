@@ -1,4 +1,7 @@
+package concole_apps;
 import java.util.Scanner;
+
+import model.Lab1;
 
 public class Lab1Console {
 

@@ -1,3 +1,4 @@
+package model;
 
 /**
  * Objective: practice input/output, Strings, expressions, variables cs. constants 
