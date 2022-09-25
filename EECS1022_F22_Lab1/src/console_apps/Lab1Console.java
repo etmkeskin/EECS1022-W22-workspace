@@ -1,4 +1,4 @@
-package concole_apps;
+package console_apps;
 import java.util.Scanner;
 
 import model.Lab1;
