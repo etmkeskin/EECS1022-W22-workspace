@@ -11,20 +11,18 @@ public class Lab2 {
 	 */
 	public static int collatz(int n) {
 		
+		int result = 0;
+		
 		 if((n % 2) == 0) { 
-			 int evenNumber = 0;
-			 evenNumber = n / 2;
-			 return evenNumber;
+			 result = n / 2;
 		 }
-		 else if((n % 2) == 1) {	 
-			 int oddNumber = 0;
-			 oddNumber = (3 * n) + 1;
-			 return oddNumber;
+		 if((n % 2) == 1) {	 
+			 result = (3 * n) + 1;
 		 }
-		 else if (n < 0){
-			 int negativeNumber = -1;
-			 return negativeNumber;
+		 if (n < 0){
+			 result = -1;
 		 }
+		 return result;
 				 
 	}
 	/**
