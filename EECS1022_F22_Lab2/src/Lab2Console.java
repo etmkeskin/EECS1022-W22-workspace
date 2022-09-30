@@ -34,14 +34,14 @@ public class Lab2Console {
 		
 		//test enoughLunchTime()
 		//write code similar to the previous methods testing code to test this method
-		System.out.println("Enter the first time as hours and minutes: ");
-		int hour1 = scan.nextInt();
-		int minute1 = scan.nextInt();
-		System.out.println("Enter the second time as hours and minutes: ");
-		int hour2 = scan.nextInt();
-		int minute2 = scan.nextInt();
-		boolean result = Lab2.enoughLunchTime(hour1, minute1, hour2, minute2);
-		System.out.println(result);
+//		System.out.println("Enter the first time as hours and minutes: ");
+//		int hour1 = scan.nextInt();
+//		int minute1 = scan.nextInt();
+//		System.out.println("Enter the second time as hours and minutes: ");
+//		int hour2 = scan.nextInt();
+//		int minute2 = scan.nextInt();
+//		boolean result = Lab2.enoughLunchTime(hour1, minute1, hour2, minute2);
+//		System.out.println(result);
 		
 		//test computePayment()
 		//write code similar to the previous methods testing code to test this method
