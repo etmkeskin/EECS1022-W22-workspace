@@ -31,25 +31,111 @@ public class Lab2 {
 	 */
 	public static String yorkAdmit (double gpa, int sat) {
 		
+		String result = "";
+		
+		if(gpa <= 1.5 && sat <= 700) {
+			result = "ScoresTooLow";	
+		}
+		else if(gpa > 1.8 && sat > 900) {
+			result = "Accept";
+		}
+		else {
+			result = "Reject";
+		}
+		
+		return result;
 	}
 	/**
 	 * Takes an GPA and SAT score of a student and returns a string if "Accepted", "Rejected",
-	 * or "ScoresTooLow"
+	 * or "ScoresTooLow" (THERE IS A MISTAKE HERE)
+	 */
+	/*
+	 * THIS METHOD CALCULATES QUADRANT VALUE OF COORDINATES.
 	 */
 	public static int quadrant (double x, double y) {
+		
+		int result = 0;
+		
+		if(x > 0 && y > 0) {
+			result = 1;
+		}
+		if(x < 0 && y > 0) {
+			result = 2;
+		}
+		if(x < 0 && y < 0) {
+			result = 3;
+		}
+		if(x > 0 && y < 0) {
+			result = 4;
+		}
+		
+		return result;
 		
 	}
 	/**
 	 * Takes coordinates of a points (x,y) and determines to which quadrant it belongs
 	 */
-	public static int quadrant (int x, int y) {
-		
-	}
+	/*
+	 * THIS METHOD MUST TAKE DOUBLE VALUES AS COORDINATES NOT INTEGER VALUES. THERE IS A MISTAKE HERE.
+	 */
+//	public static int quadrant (int x, int y) {
+//		
+//		int result = 0;
+//		
+//		if(x > 0 && y > 0) {
+//			result = 1;
+//		}
+//		if(x < 0 && y > 0) {
+//			result = 2;
+//		}
+//		if(x < 0 && y < 0) {
+//			result = 3;
+//		}
+//		if(x > 0 && y < 0) {
+//			result = 4;
+//		}
+//		
+//		return result;
+//		
+//	}
 	/**
 	 * Takes inputs of two clock times in hours and minutes and determines if there is enough
 	 * time between them for lunch. This time has to be at least 45 minutes.
 	 */
 	public static boolean enoughLunchTime (int hour1, int min1, int hour2, int min2) {
+		
+		boolean result = true;
+		
+		if(((hour1 > 24) || (hour2 > 24)) || ((min1 > 59) || (min2 > 59))) {
+			result = false;
+		}
+		else if(hour1 > hour2){
+			result = false;
+		}
+		else {
+			if((hour2 - hour1) >= 2) {
+				result = true;
+			}
+			else if(hour1 < hour2) {
+				if((min2 + min1) >= 45) {
+					result = true;
+				}
+				else {
+					result = false;
+				}
+			}
+			if(hour1 == hour2) {
+				if((min2 + min1) >= 45) {
+					result = true;
+				}
+				else {
+					result = false;
+				}
+			}
+		}
+		
+		
+		return result;
 		
 	}		
 	/**
@@ -57,6 +143,11 @@ public class Lab2 {
 	 * calculates the minimum payment owed 
 	 */
 	public static double computePayment (double oldBalance, double charges) {
+		double result = 0.0;
+		
+		
+		
+		return result;
 		
 	}
 }
