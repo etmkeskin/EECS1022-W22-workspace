@@ -143,11 +143,40 @@ public class Lab2 {
 	 * calculates the minimum payment owed 
 	 */
 	public static double computePayment (double oldBalance, double charges) {
-		double result = 0.0;
+		double interest = 0.0;
+		double minPayment = 0.0;
+		double totalCharges = oldBalance + charges;
+		
+		if(oldBalance == 0) {
+			interest = 0.0;
+			
+			if(totalCharges < 50.00) {
+				minPayment = totalCharges;
+			}
+			else if((totalCharges > 50.00) && (totalCharges < 300.00)) {
+				minPayment = 50.00;
+			}
+			else {
+				minPayment = 20 * totalCharges / 100;
+			}
+		}
+		else if(oldBalance > 0) {
+			interest = 0.02 * totalCharges;
+			totalCharges = totalCharges + interest;
+			
+			if(totalCharges < 50.00) {
+				minPayment = totalCharges;
+			}
+			else if((totalCharges > 50.00) && (totalCharges < 300.00)) {
+				minPayment = 50.00;
+			}
+			else {
+				minPayment = 20 * totalCharges / 100;
+			}
+		}
 		
 		
-		
-		return result;
+		return minPayment;
 		
 	}
 }
