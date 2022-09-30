@@ -1,3 +1,4 @@
+package model;
 
 /**
  * Objective: practice arithmetic operations, If statements, nested If statements 
