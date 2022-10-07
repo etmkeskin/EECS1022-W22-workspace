@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import model.Grade;
 
-public class GreatApp2 {
+public class GreatApp {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -12,9 +12,13 @@ public class GreatApp2 {
 		
 		System.out.println("Enter a raw mark score (from 0 to 100): ");
 		int marks = input.nextInt();
-		String lg = Grade.getLetterGrade2(marks);
 		
-		System.out.println("It is letter grade " + lg);
+		/* 
+		 * In principle, we only call one utility method from console application.
+		 */
+		String report = Grade.getGradeReport(marks);
+		
+		System.out.println(report);
 		
 		
 		input.close();
