@@ -33,6 +33,16 @@ public class Lab3Console {
 		
 		
 		//test validDate()
+		System.out.println("Welcome to valid year calculator!");
+		System.out.println("Enter the day: ");
+		int day = input.nextInt();
+		System.out.println("Enter the month: ");
+		int month = input.nextInt();
+		System.out.println("Enter the year: ");
+		int year = input.nextInt();
+		
+		boolean result = Lab3.validDate(day, month, year);
+		System.out.println(result);
 		
 		
 		

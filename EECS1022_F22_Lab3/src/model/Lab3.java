@@ -82,5 +82,23 @@ public class Lab3 {
 	 * it checks if the year is a leap year
 	 */
 	//include the code for validDate()
+	public static boolean validDate(int day, int month, int year) {
+		
+		boolean yearValid = true;
+		boolean monthValid = true;
+		boolean result = true;
+		if((month < 1 || month > 12) || year < 1000) {
+			result = false;
+		}
+		//else
+		
+		
+		
+	
+		return result;
+	}
+	
+	
+	
 		
 }
