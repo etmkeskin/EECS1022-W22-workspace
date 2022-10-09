@@ -84,14 +84,56 @@ public class Lab3 {
 	//include the code for validDate()
 	public static boolean validDate(int day, int month, int year) {
 		
-		boolean yearValid = true;
-		boolean monthValid = true;
+		boolean monthValid = month >= 1 || month <= 12;
+		boolean yearValid = year > 1000;
+		boolean isLeapYear = ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+		boolean dayValid = day >= 1 && day <= 31;
 		boolean result = true;
-		if((month < 1 || month > 12) || year < 1000) {
+		
+		if(monthValid && yearValid && dayValid == true) {
+			if(isLeapYear == true) {
+				if(month == 2) {
+					if(day >=1 || day <= 29) {
+						result = true;
+					}
+					else {
+						result = false;
+					}
+				}	
+				else if((month == 4 || month == 6) || (month == 9 || month == 11)) {
+					if(day >= 1 || day <= 30) {
+						result = true;
+					}
+					else {
+						result = false;
+					}
+				}
+				else {
+					result = true;
+				}
+			}
+			else if(isLeapYear == false) {
+				if(month == 2) {
+					if(day > 28) {
+						result = false;
+					}
+					else {
+						result = true;
+					}
+				}
+				else if((month == 4 || month == 6) || (month == 9 || month == 11)) {
+					if(day >= 1 || day <= 30) {
+						result = true;
+					}
+					else {
+						result = false;
+					}
+				}
+			}
+		}
+		else {
 			result = false;
 		}
-		//else
-		
 		
 		
 	
