@@ -21,7 +21,6 @@ public class Lab5 {
 		}
 		
 		return result;
-		
 	}
 	
 	
