@@ -31,29 +31,31 @@ public class Lab5 {
 			result = "Invalid";
 		}
 		else {
-			int i = 1;
-			while(num > 0) {
-				int mod = num % 10;
-				result += String.valueOf(i);
-				i *= 10;
-				num /= 10;	
+//			String number = Integer.toString(num);
+//			int i = 1;
+//			while(num) {
+//				//int mod = num % 10;
+//				result += String.valueOf(i);
+//				i *= 10;
+//				num /= 10;	
+//				
+//			}
+			int digit = d;
+			for(int i=0 ; i<d ; i++) {
+				int output = 0;
 				
-//				for(int j = 1; j <= d; j++) {
-//					
-//					
-//					
-//				}
-	
+				output = (int) (num/(Math.pow(10,digit-1)));
+				num = (int) (num% (Math.pow(10,digit-1)));
+				
+				System.out.println(output +"*"+(int)(Math.pow(10,digit-1))+ "\n");
+				//result = result + num;
+				digit--;
 			}
+			
+
 		}
 		
-		
-		
-		
-		
-		
-		
-		
+	
 		return result;
 	}
 	
