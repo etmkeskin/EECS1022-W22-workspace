@@ -25,7 +25,36 @@ public class Lab5 {
 	
 	
 	public static String expand (int num, int d) {
-		return "";
+		String result = "";
+		
+		if(num < 0 || d < 0) {
+			result = "Invalid";
+		}
+		else {
+			int i = 1;
+			while(num > 0) {
+				int mod = num % 10;
+				result += String.valueOf(i);
+				i *= 10;
+				num /= 10;	
+				
+//				for(int j = 1; j <= d; j++) {
+//					
+//					
+//					
+//				}
+	
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		return result;
 	}
 	
 	
