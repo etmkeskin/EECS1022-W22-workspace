@@ -1,4 +1,7 @@
+package console_apps;
 import java.util.Scanner;
+
+import model.Lab5;
 
 public class Lab5Console {
 	public static void main(String[] args) {
