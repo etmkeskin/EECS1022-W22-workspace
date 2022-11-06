@@ -31,37 +31,40 @@ public class Lab5 {
 			result = "Invalid";
 		}
 		else {
-//			String number = Integer.toString(num);
-//			int i = 1;
-//			while(num) {
-//				//int mod = num % 10;
-//				result += String.valueOf(i);
-//				i *= 10;
-//				num /= 10;	
-//				
-//			}
 			int digit = d;
-			for(int i=0 ; i<d ; i++) {
+			for(int i = 0 ; i < d ; i++) {
+				
 				int output = 0;
-				
-				output = (int) (num/(Math.pow(10,digit-1)));
-				num = (int) (num% (Math.pow(10,digit-1)));
-				
-				System.out.println(output +"*"+(int)(Math.pow(10,digit-1))+ "\n");
-				//result = result + num;
+				output = (int) (num / (Math.pow(10, digit-1)));
+				num = (int) (num % (Math.pow(10, digit-1)));
+				if(Math.pow(10, digit - 1) != 1) {
+					result += output + "*" + (int)(Math.pow(10, digit-1)) + " + ";
+				}
+				else {
+					result += output;
+
+				}
 				digit--;
 			}
-			
-
-		}
-		
 	
+		}
+
 		return result;
 	}
 	
 	
 	public static String getSeqStat(int ft, int d, int n) {
-		return "";
+		String result = "{";
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		return result + "}";
 	}
 	
 	
