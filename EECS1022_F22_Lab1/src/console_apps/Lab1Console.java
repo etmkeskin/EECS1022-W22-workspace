@@ -83,6 +83,9 @@ public class Lab1Console {
 		String result = Lab1.baseConvert(base, base10Num);
 		//print the result to the console
 		System.out.println(result);
+		
+		
+		scan.close();
 
 	}
 

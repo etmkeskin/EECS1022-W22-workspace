@@ -55,7 +55,7 @@ public class Lab2Console {
 		double minPaymentDue = Lab2.computePayment(preBalance, addCharges);
 		System.out.println(minPaymentDue);
 		
-		
+		scan.close();
 		
 	
 	}

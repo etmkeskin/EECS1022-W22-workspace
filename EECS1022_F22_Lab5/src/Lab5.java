@@ -55,21 +55,62 @@ public class Lab5 {
 	
 	public static String getSeqStat(int ft, int d, int n) {
 		String result = "{";
+		int term = ft;
+		int sum = 0;
+		int product = 1;
+		int j = 1;
+		String seq = "<";
 		
-		
-		
-		
-		
-		
-		
-		
-		
+		for(int i = 1; i <= n; i++, term += d) {
+			sum += term;
+			product *= term;
+			if(i > 1) {
+				seq += ", " + term;
+			}
+			else if(i == 1 || i == n){
+				seq += term;
+			}
+			
+			for(; j <= i; j++) {
+				if(j < n) {
+					result += "[" + seq + ">" + ": " + sum + ", " + product + "]" + "; ";
+				}
+				else if(j == n) {
+					result += "[" + seq + ">" + ": " + sum + ", " + product + "]";
+				}
+				
+			}
+			
+		}
+
 		return result + "}";
 	}
 	
 	
 	public static String seqInterleaving(int ft1, int d1, int n1, int ft2, int d2, int n2) {
-		return "";
+		String result = "<";
+		
+		int term1 = ft1;
+		int term2 = ft2;
+		int j = 1;
+		for(int i = 1; i <= n1; i++, term1 += d1) {
+			result += term1 + ", ";
+			while(j <= i) {
+				result += term2 + ", ";
+				term2 += d2;
+				j++;
+			}
+		}
+		for(int k = 1; k <= n2 - n1; k++, term2 += d2) {
+			if(k < n2 - n1) {
+				result += term2 + ", ";
+			}
+			else {
+				result += term2;
+			}
+			
+		}
+		return result + ">";
 		
 	}
 }
