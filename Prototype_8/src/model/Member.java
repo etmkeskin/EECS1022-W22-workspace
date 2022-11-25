@@ -155,6 +155,8 @@ public class Member {
 	
 	
 	
+	
+	
 	//
 	/*
 	 * MUTATOR method (VOID, not returning anything; modifying attributes)
@@ -203,7 +205,6 @@ public class Member {
 	}
 	
 	public void extendFacilityUnits(String name, int howMany) {
-		int result = -1;
 		Facility f = null;
 		boolean hasFound = false;
 		for(int i = 0; !hasFound && i < this.nof; i++) {
