@@ -29,15 +29,172 @@ public class Lab8 {
 	    return result;
 	}
 }
-//
-//
-//class Patient {
-//	
-//	
-//}
-//
-//
-//class Physician {
-//
-//	
-//}
+
+
+class Patient {
+	private String name;
+	private int ssn;
+	private int age;
+	private char gender;
+	private String address;
+	
+	
+	public Patient() {
+		//default constructor
+	}
+	
+	public Patient(String name, int ssn, int age, char gender, String address) {
+		this.name = name;
+		this.ssn = ssn;
+		this.age = age;
+		this.gender = gender;
+		this.address = address;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public int getSsn() {
+		return ssn;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setSsn(int ssn) {
+		this.ssn = ssn;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	@Override
+	public String toString() {
+		return "Patient Name: " + name + "\t SSN: " + ssn + "\t Age: " + age + 
+				"\t Gender: " + gender + "\t Address: " + address;
+	}
+	
+}
+
+
+class Physician {
+	private String name;
+	private String phone;
+	private ArrayList<Patient> patients;
+	private int pCount = 0;
+	
+	
+	public Physician() {
+		//default constructor
+	}
+	
+	public Physician(String name, String phone) {
+		this.name = name;
+		this.phone = phone;
+		this.patients = new ArrayList<Patient>();
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+	
+	public ArrayList<Patient> getPatients(){
+		return patients;
+	}
+	
+	public int getPcount() {
+		return pCount;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+	public void setPatients(ArrayList<Patient> patients) {
+		this.patients = patients;
+	}
+	
+	public void admitPatient(Patient patient) {
+		if(patients.size() == 0) {
+			patients.add(patient);
+			pCount++;
+		}
+		else {
+			for(int i = 0; i < patients.size(); i++) {
+				int ssn = patients.get(i).getSsn();
+				if(ssn != patient.getSsn()) {
+					patients.add(patient);
+					pCount++;
+					break;
+				}
+			}
+		}
+	}
+	
+	public void releasePatient(Patient patient) {
+		for(int i = 0; i < patients.size(); i++) {
+			int ssn = patients.get(i).getSsn();
+			if(ssn == patient.getSsn()) {
+				patients.remove(i);
+				pCount--;
+				break;
+			}
+		}
+	}
+	
+	public String reportPatients() {
+		String result = "[";
+		if(this.patients.size() == 0) {
+			return result + "]";
+		}
+		else {
+			for(int i = 0; i < patients.size(); i++) {
+				result += patients.get(i).toString() + "\n";
+			}
+			return result + "]";
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
