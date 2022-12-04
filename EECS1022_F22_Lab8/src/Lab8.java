@@ -151,15 +151,24 @@ class Physician {
 			pCount++;
 		}
 		else {
-			for(int i = 0; i < patients.size(); i++) {
-				int ssn = patients.get(i).getSsn();
-				if(ssn != patient.getSsn()) {
-					patients.add(patient);
-					pCount++;
-					break;
-				}
+			if(isPatientExist(patient) == false) {
+				patients.add(patient);
+				pCount++;
 			}
 		}
+	}
+	
+	public boolean isPatientExist(Patient patient) {
+		boolean result = true;
+		for(int i = 0; i < patients.size(); i++) {
+			if(patients.get(i).getSsn() == patient.getSsn()) {
+				result = true;
+			}
+			else {
+				result = false;
+			}
+		}
+		return result;
 	}
 	
 	public void releasePatient(Patient patient) {
@@ -175,26 +184,21 @@ class Physician {
 	
 	public String reportPatients() {
 		String result = "[";
-		if(this.patients.size() == 0) {
+		if(patients.size() == 0) {
 			return result + "]";
 		}
 		else {
 			for(int i = 0; i < patients.size(); i++) {
-				result += patients.get(i).toString() + "\n";
+				if(i < patients.size() - 1) {
+					result += patients.get(i) + ", ";
+				}
+				else {
+					result += patients.get(i);
+				}
 			}
-			return result + "]";
+			return result.toString() + "]";
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }
