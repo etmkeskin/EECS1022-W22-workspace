@@ -137,8 +137,8 @@ class Patient {
 	
 	@Override
 	public String toString() {
-		return "Patient Name: " + name + "\t" + "SSN: " + ssn + "\t" + "Age: " + age + "\t" + 
-	"Gender: " + gender + "\t" + "Address: " + address;
+		return "Patient Name: " + name + "\t SSN: " + ssn + "\t Age: " + age + "\t Gender: " + gender +
+				"\t Address: " + address;
 	}
 	
 }
@@ -191,28 +191,45 @@ class Physician {
 	}
 	
 	public void admitPatient(Patient patient) {
-		for(int i = pCount; i < patients.length; pCount++) {
-			if(patients.length < 3) {
-				patients[i] = patient;
-			}
-			else {
-			}
+		if(pCount < 3) {
+			patients[pCount++] = patient;
+		}
+		else {
+			increaseLength();
+			patients[pCount++] = patient;
 		}
 	}
 	
-	public void increaseLength(Patient[] patients) {
+	private void increaseLength() {
 		if(pCount >= 3) {
-			MAX_PATIENT++;
-			patients = new Patient[MAX_PATIENT];
+			Patient[] temp = new Patient[MAX_PATIENT * 2];
+			for(int i = 0; i < patients.length; i++) {
+				temp[i] = patients[i];
+			}
+			patients = temp;
 		}
 	}
 	
+	public void releasePatient(Patient patient) {
+		for(int i = 0; i < pCount; i++) {
+			if(patients[i].getSsn() == patient.getSsn()) {
+				for(int j = i; j < pCount - 1; j++) {
+					patients[j] = patients[j + 1];
+				}
+				patients[pCount - 1] = null;
+				pCount--;
+				break;
+			}
+		}
+	}
 	
-	
-	
-	
-	
-	
-	
-	
+	public String reportPatients() {
+		String result = "";
+		for(int i = 0; i < patients.length; i++) {
+			if(patients[i] != null) {
+				result += patients[i].toString() + "\n";
+			}
+		}
+		return result;
+	}
 }
