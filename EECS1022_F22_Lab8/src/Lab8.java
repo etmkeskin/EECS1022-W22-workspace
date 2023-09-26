@@ -94,7 +94,7 @@ class Patient {
 	@Override
 	public String toString() {
 		return "Patient Name: " + name + "\t SSN: " + ssn + "\t Age: " + age + 
-				"\t Gender: " + gender + "\t Address: " + address;
+				"\t Gender: " + gender + "\t Address:re " + address;
 	}
 	
 }
